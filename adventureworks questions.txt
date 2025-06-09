@@ -1,0 +1,37 @@
+SALES
+Most ordered Product, category, subcategory
+Most products orders region wise.
+
+
+CUSTOMERS
+-- Annual Income & product purchase relation 			xxx
+Most purchased order by customer name
+Total Order Territory/Region wise
+TOTAL Purchased Order by GENDER
+Female most ordered product vs male most oder product
+Home ownership based on Gender matters in order purchasing
+Education level and child and annual income relation.
+Martial Status single and above 50 age purchase 
+Best age group people purchasing
+Top annual income persons ordered product
+Paritial high school vs bachlors income mean and who orders the more valued products.
+People who bachelors & Clerical & Home owner & annual Income 40000
+
+
+DATE
+Orders by year, month
+ORDER ANALYSIS BASED ON QUARTER (Q1, Q2, Q3, Q4)
+peak days of orders from previous date data
+pivot table of all the products month wise
+how many peoples orderes on there birthdate
+
+
+Other Visualization
+Bar chart of all months sales in year wise.
+Orderes sales line chart of all three years.. live chart.
+
+
+Dashboard of all time
+Top 10 SELLING Products
+Top SELLING Category
+Top 10 valuable Customer by sales amount
