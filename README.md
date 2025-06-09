@@ -41,7 +41,6 @@ Data Import - Schema Connections and Relationship
 	SELECT * FROM all_sales;
 
 
-'''sql
 Data Cleaning For consolidated_sales TABLE
 
 -- Checking for Duplicates
