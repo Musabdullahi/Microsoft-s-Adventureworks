@@ -191,4 +191,32 @@ Further Scrutiny Shows That Other Tables are Clean/Error-Free/Consistent
 	ON S.ProductKey = PL.ProductKey
 	WHERE OrderNumber = 'SO51179';
 
+-- Adding Dynamic Columns to Customer Lookup
+	ALTER TABLE customer_lookup
+	ADD COLUMN FullName varchar(255)
+	GENERATED ALWAYS AS (CONCAT_WS(FirstName,' ',LastName));
+
+	ALTER TABLE customer_lookup
+	ADD COLUMN Age int;
+	UPDATE customer_lookup
+		
+	SET Age = timestampdiff(YEAR, BirthDate, CURDATE());
+	ALTER TABLE customer_lookup
+	ADD COLUMN AgeRange VARCHAR(30);
+
+	UPDATE customer_lookup		
+	SET AgeRange =
+		CASE 	WHEN timestampdiff(YEAR, BirthDate, CURDATE()) BETWEEN 41 AND 50 THEN '41-50'
+			WHEN timestampdiff(YEAR, BirthDate, CURDATE()) BETWEEN 51 AND 60 THEN '51-60'
+			WHEN timestampdiff(YEAR, BirthDate, CURDATE()) BETWEEN 61 AND 70 THEN '61-70'
+			WHEN timestampdiff(YEAR, BirthDate, CURDATE()) BETWEEN 71 AND 80 THEN '71-80'
+			WHEN timestampdiff(YEAR, BirthDate, CURDATE()) BETWEEN 81 AND 90 THEN '81-90'
+			WHEN timestampdiff(YEAR, BirthDate, CURDATE()) BETWEEN 91 AND 100 THEN '91-100'
+			WHEN timestampdiff(YEAR, BirthDate, CURDATE()) BETWEEN 101 AND 110 THEN '101-110'
+			WHEN timestampdiff(YEAR, BirthDate, CURDATE()) BETWEEN 111 AND 120 THEN '111-120' 
+         	ELSE 'Out of Range'
+		END;
+	
+	SELECT  *
+    FROM adventureworks.customer_lookup;
 
