@@ -216,7 +216,8 @@ Further Scrutiny Shows That Other Tables are Clean/Error-Free/Consistent
 			WHEN timestampdiff(YEAR, BirthDate, CURDATE()) BETWEEN 111 AND 120 THEN '111-120' 
          	ELSE 'Out of Range'
 		END;
-	
-	SELECT  *
-    FROM adventureworks.customer_lookup;
+
+
+
+	SELECT  *    FROM adventureworks.customer_lookup;
 
