@@ -173,3 +173,22 @@ Other TABLES are clean without Errors
 Further Scrutiny Shows That Other Tables are Clean/Error-Free/Consistent
 
 
+-- ANALYSIS
+-- Analysis shows that multiple products were ordered same time indicating same OrderNumber
+	SELECT OrderNumber, count(OrderNumber)
+	FROM adventureworks.consolidated_sales
+	GROUP BY OrderNumber 
+	HAVING count(OrderNumber) > 1;
+
+	SELECT *	
+	FROM consolidated_sales
+	WHERE OrderNumber = 'SO51179';
+
+-- Consolidating and Linking ProductKey with Product Lookup
+	SELECT * 
+	FROM adventureworks.consolidated_sales AS S
+	LEFT JOIN product_lookup AS PL 
+	ON S.ProductKey = PL.ProductKey
+	WHERE OrderNumber = 'SO51179';
+
+
